@@ -1,0 +1,39 @@
+<html>
+    <body>
+        <div id="title">
+            <h1>Welcome to Divine website</h1>
+            <p>This is where dreams come true</p>
+            <button onclick="makeDreamsComeTrue()">Make Dreams Come True</button>
+        </div>
+    </body>
+</html>
+
+<style>
+    body{
+        background-image: url('background.jpg');
+        background-size: cover;
+    }
+
+    h1 {
+        color: blue;
+    }
+
+    button:hover {
+        background-color: lightblue;
+        cursor: pointer;
+        font-size: 18px;
+    }
+
+    #title {
+        width: 100%;
+        text-align: center;
+        margin-top: 50px;
+    }
+</style>
+
+<script>
+    function makeDreamsComeTrue() {
+        document.body.style.backgroundImage = "url('dreams.jpg')";
+        document.getElementById("title").style.visibility = "hidden";
+    }
+</script>
