@@ -11,4 +11,6 @@
     #title {
         text-align: center;
         padding: 200px;
+        background-image: url('../images/image1-unsplash.jpg');
+        background-position: center top;
     }
