@@ -1,25 +1,27 @@
  :root{
---titleSectionColor: white;
+--titleSectionprimaryColor: white;
+--titleSectionSecondaryColor: #d4cbc4;
  }
  
  #title {
-        color: var(--titleSectionColor);
+        color: var(--titleSectionprimaryColor);
         text-align: center;
         padding: 200px;
         background-image: url('../images/image1-unsplash.jpg');
         background-position: center top;
     }
 
-    .titleSection-button:hover{
-        color: var(--titleSectionColor);
+    .titleSection-button{
+        color: var(--titleSectionprimaryColor);
         background-color: transparent;
-        border: 2px solid var(--titleSectionColor);
+        border: 2px solid var(--titleSectionprimaryColor);
         border-radius: 5px;
         padding: 15px 20px;
     }
 
     .titleSection-button:hover {
-        background-color: red;
+        background-color: var(--titleSectionprimaryColor);
+        color: var(--titleSectionSecondaryColor);
         cursor: pointer;
     }
 
