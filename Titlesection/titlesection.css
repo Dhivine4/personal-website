@@ -1,16 +1,26 @@
-  h1 {
-        color: white;
-    }
-
-    button:hover {
-        background-color: lightblue;
-        cursor: pointer;
-        font-size: 18px;
-    }
-
-    #title {
+ :root{
+--titleSectionColor: white;
+ }
+ 
+ #title {
+        color: var(--titleSectionColor);
         text-align: center;
         padding: 200px;
         background-image: url('../images/image1-unsplash.jpg');
         background-position: center top;
     }
+
+    .titleSection-button:hover{
+        color: var(--titleSectionColor);
+        background-color: transparent;
+        border: 2px solid var(--titleSectionColor);
+        border-radius: 5px;
+        padding: 15px 20px;
+    }
+
+    .titleSection-button:hover {
+        background-color: red;
+        cursor: pointer;
+    }
+
+    
