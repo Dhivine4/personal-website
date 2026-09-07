@@ -10,6 +10,12 @@
         background-image: url('../images/image1-unsplash.jpg');
         background-position: center top;
     }
+    .titleSectionHeader{
+        margin-bottom: -5px;
+    }
+    .titleSectiontext{
+        margin-bottom: 40px;
+    }
 
     .titleSection-button{
         color: var(--titleSectionprimaryColor);
