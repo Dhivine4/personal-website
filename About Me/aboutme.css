@@ -4,4 +4,20 @@
 
 .aboutme-section-text {
     text-align: justify;
+    margin-top: 40px;
+}
+
+.aboutme-icons {
+    font-size: 20px;
+    margin-top: 45px;
+}
+
+.aboutme-icon {
+    margin: 10px;
+    color: var(--titleSectionSecondaryColor);
+}
+
+.aboutme-icon:hover {
+    color: var(--titleSectionTertiaryColor);
+    cursor: pointer;
 }
