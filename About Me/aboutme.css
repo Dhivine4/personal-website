@@ -10,6 +10,11 @@
 .aboutme-icons {
     font-size: 20px;
     margin-top: 45px;
+    margin-bottom: 25px;
+}
+
+.aboutme-icons > a {
+    text-decoration: none;
 }
 
 .aboutme-icon {
@@ -19,5 +24,19 @@
 
 .aboutme-icon:hover {
     color: var(--titleSectionTertiaryColor);
+    cursor: pointer;
+}
+
+.aboutme-download-button {
+    color: black;
+    background-color: transparent;
+    border: 2px solid var(--titleSectionSecondaryColor);
+    border-radius: 5px;
+    padding: 15px 20px;
+}
+
+.aboutme-download-button:hover {
+    background-color: var(--titleSectionSecondaryColor);
+    color: var(--titleSectionprimaryColor);
     cursor: pointer;
 }
