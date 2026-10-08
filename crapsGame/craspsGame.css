@@ -1,0 +1,20 @@
+ #craps-game {
+    background-image: url("../images/casinoBckgndImage.jpg");
+    color: white;
+    background-position: center top;
+ }
+
+ .craps-game-title {
+    text-align: center;
+    margin-top: 100px;
+ }
+
+ .craps-game-container {
+    width: min(700px, 80vw);
+    height: min(500px, 57vw);
+    border: solid white 2px;
+    margin: 100px auto 0 auto;
+    background-image: url(../images/casino-table.png);
+    background-size: cover;
+    background-position: center top;
+ }
