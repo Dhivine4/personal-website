@@ -18,3 +18,40 @@
     background-size: cover;
     background-position: center top;
  }
+
+ .craps-registration-pane {
+    margin-top: 40px;
+    text-align: center;
+ }
+
+ .craps-registration-pane p {
+    padding-left:30px;
+ }
+
+ .craps-registration-pane button {
+    background-color: transparent;
+    color: white;
+    margin: 0 5px;
+    border: solid transparent 1px ;
+ }
+
+ .craps-registration-pane button:hover {
+    background-color:#006600;
+    color: white;
+    border-radius: 5px;
+    border: solid 1px #003300;
+    font-weight: bold;
+ }
+
+ .craps-registration-input {
+    background: none;
+    border: none;
+    border-bottom: solid white 1px;
+    color: white;
+    text-align: center;
+    outline: none;
+    margin-left: 30px;
+    width: 100px;
+ }
+
+ 
