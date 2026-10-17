@@ -59,3 +59,13 @@
    display: none;
  }
  
+ .craps-main-section-stats {
+   text-align: center;
+   margin-top: 10px;
+ }
+
+ #craps-stat-money-container {
+   font-size: 20px;
+   margin: 10px 0 5px;
+ }
+
