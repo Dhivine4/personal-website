@@ -69,6 +69,8 @@
 
  #craps-main-section {
    display: none;
+   height: 100%;
+   position: relative;
  }
  
  .craps-main-section-stats {
@@ -79,5 +81,12 @@
  #craps-stat-money-container {
    font-size: 20px;
    /* margin: px 0 5px; */
+ }
+
+ .craps-round-manager {
+   position: absolute;
+   bottom: 10px;
+   width: 100%;
+   text-align: center;
  }
 
