@@ -3,8 +3,9 @@
       <link rel="stylesheet" href="./Titlesection/titlesection.css"> 
       <link rel="stylesheet" href="./About Me/aboutme.css">
       <link href="https://fonts.googleapis.com/css2?family=Armata&display=swap" rel="stylesheet"> 
-      <link rel="stylesheet" href="./crapsGame/craspsGame.css"
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.css">
+      <link rel="stylesheet" href="./crapsGame/craspsGame.css" >
+      <link rel="stylesheet" href="./crapsGame/utility.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css">
     </head>
     <body>
         <div class="main-section" id="title">
@@ -63,14 +64,20 @@
                             Rounds: <span id="craps-stat-rounds"></span>
                         </div>
                     </div>
+                    <div class="craps-onBoard-container">
+                        <div class="craps-role-dice-container no-select"> <i class="fa-solid fa-dice"></i> roll dice</div>
+                    </div>
                     <div class="craps-round-manager">
-                        <button id="EVEN" onclick="betEven()"> EVEN </button>
-                        <button id="ODD" onclick="betOdd()"> ODD </button>
-                        <div>
-                            <span onclick="decreaseBet()">-</span>
+                        <div class="craps-betting-grid">
+                          <button class="craps-betting-button" id="EVEN" onclick="betEven()"> EVEN </button>
+                          <div class="craps-betting-amount-container">
+                            <span class="craps-betting-amount-indicator" onclick="decreaseBet()">-</span>
                             <span id="craps-user-bet-amount">$100</span>
-                            <span onclick="increaseBet()">+</span>
+                            <span class="craps-betting-amount-indicator" onclick="increaseBet()">+</span>
+                          </div>
+                           <button class="craps-betting-button" id="ODD" onclick="betOdd()"> ODD </button>
                         </div>
+                        
                     </div>
                 </div>
             </div>

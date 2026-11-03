@@ -83,10 +83,60 @@
    /* margin: px 0 5px; */
  }
 
+ .craps-onBoard-container {
+    margin-top: calc(var(--height-scale) * 0.3) ;
+    text-align: center;
+    font-size: small;
+ }
+
+ .craps-role-dice-container {
+   width: fit-content;
+   margin: 0 auto;
+ }
+
+.craps-role-dice-container:hover {
+   cursor: pointer;
+   transform: scale(1.1);
+}
+
  .craps-round-manager {
    position: absolute;
    bottom: 10px;
    width: 100%;
    text-align: center;
+   -webkit-user-select: none; /* Safari */
+   -ms-user-select: none; /* IE 10 and IE 11 */
+   user-select: none; /* Standard syntax */
  }
 
+.craps-betting-grid {
+   display: grid;
+   grid-template-columns: 33% auto 33%;
+   margin: 0 auto;
+   width: 80%;
+   border-radius: 5px;
+   border: solid #cf8f5f
+}
+
+.craps-betting-button {
+   all: unset;
+   padding: calc(var(--height-scale) * 0.03);
+}
+
+.craps-betting-button:hover {
+cursor: pointer;
+}
+
+.craps-betting-amount-container {
+   padding: calc(var(--height-scale) * 0.03);
+   border-left: solid #cf8f5f 2px;
+   border-right: solid #cf8f5f 2px;
+}
+
+#craps-user-bet-amount {
+   margin: 0 calc(var(--height-scale) * 0.03);
+}
+
+.craps-betting-amount-indicator:hover {
+   cursor: pointer;
+}
