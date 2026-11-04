@@ -108,9 +108,19 @@ function registerCrapsPlayer () {
 
 
     function rollDice () {
+        formatDiceScale()
         document.getElementById(crapsRoleDiceButton).style.display = "none"
         const rollDiceElement = document.getElementById(CrapsRoleDiceAnimationContainer)
         rollADie({element: rollDiceElement, numberOfDice: 2,callback: processDiceResult, delay: 10000000})
+    }
+
+    function formatDiceScale () {
+         const vw = window.innerWidth * 0.8
+         const vh = window.innerHeight * 0.8
+         const widthScale = Math.min(700, vh, vw)
+         const heightScale = widthScale * 0.714
+         const scale = heightScale / 494.6592
+         document.getElementById(CrapsRoleDiceAnimationContainer).style.transform = "scale(" + scale + ")"
     }
     
     function processDiceResult (diceResult) {

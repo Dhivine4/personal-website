@@ -2,8 +2,8 @@
    --width-scale: min(700px, 80vw, 80vh);
    /* 0.714 was gotten from min height 500/700 min width  */
    --height-scale: calc(var(--width-scale) * 0.714);
-   --game-title-size: min(cal(var(--height-scale) * 0.1), 2em);
-   --title-margin-botom: calc(var(--height-scale) * 0.25); ;
+  --game-title-size: min(calc(var(--height-scale) * 0.1), 2em);
+   --title-margin-botom: calc(var(--height-scale) * 0.25); 
  }
  
  
@@ -97,6 +97,11 @@
 .craps-role-dice-container:hover {
    cursor: pointer;
    transform: scale(1.1);
+}
+
+#craps-role-dice-animation-container {
+   margin-top: calc(var(--height-scale) * -0.2);
+   margin-left: calc(var(--height-scale) * -0.2);
 }
 
  .craps-round-manager {
