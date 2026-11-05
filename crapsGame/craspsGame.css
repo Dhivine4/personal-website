@@ -114,7 +114,7 @@
    user-select: none; /* Standard syntax */
  }
 
-.craps-betting-grid {
+.craps-betting-grid, .craps-round-finish-grid  {
    display: grid;
    grid-template-columns: 33% auto 33%;
    margin: 0 auto;
@@ -123,16 +123,18 @@
    border: solid #cf8f5f
 }
 
-.craps-betting-button {
+.craps-betting-button, .craps-roundFinish-button {
    all: unset;
    padding: calc(var(--height-scale) * 0.03);
 }
 
-.craps-betting-button:hover {
+
+.craps-betting-button:hover, .craps-roundFinish-button:hover {
 cursor: pointer;
 }
 
-.craps-betting-amount-container {
+
+.craps-betting-amount-container, .craps-RoundFinish-message-container{
    padding: calc(var(--height-scale) * 0.03);
    border-left: solid #cf8f5f 2px;
    border-right: solid #cf8f5f 2px;

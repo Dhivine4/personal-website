@@ -20,6 +20,10 @@ const crapsStatsRound = "craps-stat-rounds"
 const crapsUserbetAmount= "craps-user-bet-amount"
 const crapsRoleDiceButton = "craps-roleDice-button"
 const CrapsRoleDiceAnimationContainer = "craps-role-dice-animation-container"
+const crapsBettingGridContainer = "craps-betting-grid-container"
+const crapsFinishRoundGridCOntainer = "craps-Round-finishGrid-container"
+const crapsRoundFinishMessage = "craps-roundFinish-message"
+
 
 // in-game variables 
 let currentMoney = startingMoney
@@ -56,7 +60,8 @@ function registerCrapsPlayer () {
     }
 
     function startupFirstRound () {
-        document.getElementById(crapsStatUserName).innerHTML = crapsUsername  
+        document.getElementById(crapsStatUserName).innerHTML = crapsUsername
+        document.getElementById(crapsFinishRoundGridCOntainer).style.display = "none"  
         setMoney(startingMoney)
         setRounds(startingRounds)
         setBetAmount(minimumBet)
@@ -133,7 +138,7 @@ function registerCrapsPlayer () {
     
 
     function delayedProcessDiceResult (diceResult) {
-      setTimeout(function() {processDiceResult(diceResult)}, 1000)
+      setTimeout(function() {processDiceResult(diceResult)}, 1800)
     }
 
     function processDiceResult (diceResult) {
@@ -146,10 +151,19 @@ function registerCrapsPlayer () {
         if (sum % 2 === 1) {
             diceSumResult = bets.odd
         }
-
+        let roundFinishMessage = ""
         if (diceSumResult === currentBet) {
             setMoney(currentMoney + currentbetAmount)
+            roundFinishMessage = "YOU WIN!"
         } else {
             setMoney(currentMoney - currentbetAmount)
+            roundFinishMessage = "YOU LOSE!"
         }
+
+        if (currentMoney === 0) {
+            roundFinishMessage = "YOU'RE OUT!"
+        }
+        document.getElementById(crapsBettingGridContainer).style.display = "none"
+        document.getElementById(crapsFinishRoundGridCOntainer).style.display = "block"  
+        document.getElementById(crapsRoundFinishMessage).innerHTML = roundFinishMessage
     }

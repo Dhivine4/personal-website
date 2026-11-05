@@ -69,16 +69,25 @@
                         <div id="craps-role-dice-animation-container"></div>
                     </div>
                     <div class="craps-round-manager">
-                        <div class="craps-betting-grid">
-                          <button class="craps-betting-button" id="EVEN" onclick="betEven()"> EVEN </button>
-                          <div class="craps-betting-amount-container">
-                            <span class="craps-betting-amount-indicator" onclick="decreaseBet()">-</span>
-                            <span id="craps-user-bet-amount">$100</span>
-                            <span class="craps-betting-amount-indicator" onclick="increaseBet()">+</span>
+                      <div id="craps-betting-grid-container">
+                         <div class="craps-betting-grid">
+                             <button class="craps-betting-button" id="EVEN" onclick="betEven()"> EVEN </button>
+                             <div class="craps-betting-amount-container">
+                                 <span class="craps-betting-amount-indicator" onclick="decreaseBet()">-</span>
+                                 <span id="craps-user-bet-amount">$100</span>
+                                 <span class="craps-betting-amount-indicator" onclick="increaseBet()">+</span>
+                             </div>
+                             <button class="craps-betting-button" id="ODD" onclick="betOdd()"> ODD </button>
                           </div>
-                           <button class="craps-betting-button" id="ODD" onclick="betOdd()"> ODD </button>
-                        </div>
-                        
+                      </div>    
+                      <div id="craps-Round-finishGrid-container">  
+                          <div class="craps-round-finish-grid">
+                                 <button class="craps-roundFinish-button" id="EVEN" onclick=""> NEXT ROUND </button>
+                                 <div class="craps-RoundFinish-message-container" id="craps-roundFinish-message">
+                                 </div>
+                                 <button class="craps-roundFinish-button" id="ODD" onclick=""> EXIT GAME </button>
+                           </div>
+                      </div>  
                     </div>
                 </div>
             </div>
