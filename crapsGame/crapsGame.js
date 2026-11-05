@@ -26,6 +26,7 @@ let currentMoney = startingMoney
 let currentRound = startingRounds
 let currentBet = bets.even
 let currentbetAmount = minimumBet
+let canChangeBet = true
 
 function registerCrapsPlayer () {
         crapsUsername = document.getElementById(crapsUsernameInput).value
@@ -35,7 +36,7 @@ function registerCrapsPlayer () {
         // (iv) contains alphanumerical (a-zA-z0-9_)
 
         let userNameCheck = /^[0-9]|[^a-zA-z0-9_]/g
-        if (crapsUsername < 5 || userNameCheck.test(crapsUsername)) {
+        if (crapsUsername.length < 5 || userNameCheck.test(crapsUsername)) {
             alert("username must be at least 5 characters long, alphanumeric and underscore only, no spaces, and cannot have spaces")
         } else {
              removeRegistrationPane()
@@ -55,22 +56,22 @@ function registerCrapsPlayer () {
     }
 
     function startupFirstRound () {
-        document.getElementById(crapsStatUserName).innerHTML = crapsUsername
-        currentMoney = startingMoney
-        currentRound = startingRounds
-        setMoney(currentMoney)
-        setRounds(currentRound)
+        document.getElementById(crapsStatUserName).innerHTML = crapsUsername  
+        setMoney(startingMoney)
+        setRounds(startingRounds)
         setBetAmount(minimumBet)
         betEven()
         
     }
 
     function setMoney (money) {
+       currentMoney = money 
        document.getElementById(crapsStatsMoney).innerHTML = money 
 
     }
 
     function setRounds (round) {
+        currentRound = round
        document.getElementById(crapsStatsRound).innerHTML = round
 
     }
@@ -85,12 +86,15 @@ function registerCrapsPlayer () {
 
 
     function chooseBet (bet) {
-        currentBet = bet
-        document.getElementById(bet).style.backgroundColor = "red"
+        if (canChangeBet) {
+          currentBet = bet
+          document.getElementById(bet).style.backgroundColor = "red"
                         // tenary operator 
                         // condition ? valueiftrue : valueiffalse
-        const deselect = bet == bets.even ? bets.odd : bets.even
-        document.getElementById(deselect).style.backgroundColor = "transparent"
+          const deselect = bet == bets.even ? bets.odd : bets.even
+          document.getElementById(deselect).style.backgroundColor = "transparent"
+        }
+        
     }
 
 
@@ -102,12 +106,16 @@ function registerCrapsPlayer () {
     }
 
     function setBetAmount (betAmount) {
-        currentbetAmount = betAmount
-        document.getElementById(crapsUserbetAmount).innerHTML = "$" + betAmount
+        if (canChangeBet){
+           currentbetAmount = betAmount
+           document.getElementById(crapsUserbetAmount).innerHTML = "$" + betAmount
+        }
+        
     }
 
 
-    function rollDice () {
+    function rollDice () { 
+        canChangeBet = false
         formatDiceScale()
         document.getElementById(crapsRoleDiceButton).style.display = "none"
         const rollDiceElement = document.getElementById(CrapsRoleDiceAnimationContainer)
@@ -124,5 +132,21 @@ function registerCrapsPlayer () {
     }
     
     function processDiceResult (diceResult) {
-        console.log(diceResult)
+        const sum = diceResult.reduce((accumulator, currnetValue) => {
+            return accumulator + currnetValue
+        },0)
+        setRounds(currentRound + 1)
+
+        let diceSumResult = bets.even
+        if (sum % 2 === 1) {
+            diceSumResult = bets.odd
+        }
+
+        if (diceSumResult === currentBet) {
+            alert("YOU WIN")
+            setMoney(currentMoney + currentbetAmount)
+        } else {
+            alert("YOU LOSE BETTER LUCK NEXT TIME")
+            setMoney(currentMoney - currentbetAmount)
+        }
     }
