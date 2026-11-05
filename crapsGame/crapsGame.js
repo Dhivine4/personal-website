@@ -119,7 +119,7 @@ function registerCrapsPlayer () {
         formatDiceScale()
         document.getElementById(crapsRoleDiceButton).style.display = "none"
         const rollDiceElement = document.getElementById(CrapsRoleDiceAnimationContainer)
-        rollADie({element: rollDiceElement, numberOfDice: 2,callback: processDiceResult, delay: 10000000})
+        rollADie({element: rollDiceElement, numberOfDice: 2,callback: delayedProcessDiceResult, delay: 10000000})
     }
     window.addEventListener("resize", formatDiceScale)
     function formatDiceScale () {
@@ -131,6 +131,11 @@ function registerCrapsPlayer () {
          document.getElementById(CrapsRoleDiceAnimationContainer).style.transform = "scale(" + scale + ")"
     }
     
+
+    function delayedProcessDiceResult (diceResult) {
+      setTimeout(function() {processDiceResult(diceResult)}, 1000)
+    }
+
     function processDiceResult (diceResult) {
         const sum = diceResult.reduce((accumulator, currnetValue) => {
             return accumulator + currnetValue
@@ -143,10 +148,8 @@ function registerCrapsPlayer () {
         }
 
         if (diceSumResult === currentBet) {
-            alert("YOU WIN")
             setMoney(currentMoney + currentbetAmount)
         } else {
-            alert("YOU LOSE BETTER LUCK NEXT TIME")
             setMoney(currentMoney - currentbetAmount)
         }
     }
