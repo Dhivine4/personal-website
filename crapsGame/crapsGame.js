@@ -68,15 +68,18 @@ function registerCrapsPlayer () {
 
     function startupFirstRound () {
         document.getElementById(crapsStatUserName).innerHTML = crapsUsername
+        setMoney(startingMoney)
+        setRounds(startingRounds)
+        betEven()
+        startupNextRound()
+    }
+    function startupNextRound () {
         document.getElementById(CrapsRoleDiceAnimationContainer).style.display = "none"
         document.getElementById(crapsFinishRoundGridCOntainer).style.display = "none" 
         document.getElementById(crapsRoleDiceButton).style.display = "block" 
         document.getElementById(crapsBettingGridContainer).style.display = "block" 
         canChangeBet = true
-        setMoney(startingMoney)
-        setRounds(startingRounds)
         setBetAmount(minimumBet)
-        betEven()
         
     }
 
