@@ -23,7 +23,8 @@ const CrapsRoleDiceAnimationContainer = "craps-role-dice-animation-container"
 const crapsBettingGridContainer = "craps-betting-grid-container"
 const crapsFinishRoundGridCOntainer = "craps-Round-finishGrid-container"
 const crapsRoundFinishMessage = "craps-roundFinish-message"
-
+const crapsNextRoundDisable = "craps-next-round--disable-botton"
+const crapsNextRoundButton = "craps-next-round-button"
 
 // in-game variables 
 let currentMoney = startingMoney
@@ -68,6 +69,8 @@ function registerCrapsPlayer () {
 
     function startupFirstRound () {
         document.getElementById(crapsStatUserName).innerHTML = crapsUsername
+        document.getElementById(crapsNextRoundDisable).style.display = "none"
+        document.getElementById(crapsNextRoundButton).style.display = "block"
         setMoney(startingMoney)
         setRounds(startingRounds)
         betEven()
@@ -177,6 +180,8 @@ function registerCrapsPlayer () {
 
         if (currentMoney === 0) {
             roundFinishMessage = "YOU'RE OUT!"
+            document.getElementById(crapsNextRoundDisable).style.display = "block"
+            document.getElementById(crapsNextRoundButton).style.display = "none"
         }
         document.getElementById(crapsBettingGridContainer).style.display = "none"
         document.getElementById(crapsFinishRoundGridCOntainer).style.display = "block"  
@@ -184,7 +189,7 @@ function registerCrapsPlayer () {
     }
 
     function exitGame () {
-        alert("after " + currentRound + "round, you leave with $" + currentMoney)
+        alert("after " + currentRound + " round, you leave with $" + currentMoney)
      exitMainGameSection() 
      showRegistrationPane()  
      document.getElementById(crapsUsernameInput).value = ""

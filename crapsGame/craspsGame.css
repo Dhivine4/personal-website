@@ -147,3 +147,12 @@ cursor: pointer;
 .craps-betting-amount-indicator:hover {
    cursor: pointer;
 }
+
+#craps-next-round--disable-botton {
+   color: grey;
+   background-color: rgba(0, 0, 0, 0.5);
+}
+
+#craps-next-round--disable-botton:hover {
+cursor:not-allowed;
+}
