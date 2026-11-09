@@ -4,13 +4,14 @@
 
 .aboutme-section-text {
     text-align: justify;
-    margin-top: 40px;
+    margin-top: var(--spacing-lg);
+    font-size: var(--font-normal);
 }
 
 .aboutme-icons {
-    font-size: 20px;
-    margin-top: 45px;
-    margin-bottom: 25px;
+    font-size: var(--font-medium);
+    margin-top: var(--spacing-xl);
+    margin-bottom: var(--spacing-md);
 }
 
 .aboutme-icons > a {
@@ -18,7 +19,7 @@
 }
 
 .aboutme-icon {
-    margin: 10px;
+    margin: var(--spacing-sm);
     color: var(--titleSectionSecondaryColor);
 }
 
@@ -30,9 +31,10 @@
 .aboutme-download-button {
     color: black;
     background-color: transparent;
-    border: 2px solid var(--titleSectionSecondaryColor);
-    border-radius: 5px;
-    padding: 15px 20px;
+    border: var(--border-normal) solid var(--titleSectionSecondaryColor);
+    border-radius: var(--border-radius);
+    padding: var(--button-padding-y) var(--button-padding-x);
+    font-size: var(--font-normal);
 }
 
 .aboutme-download-button:hover {
