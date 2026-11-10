@@ -1,0 +1,197 @@
+
+:root {
+    --width-scale: min(700px, 80vw, 80vh);
+
+    /* Original game proportions */
+    --height-scale: calc(var(--width-scale) * 0.714);
+
+    /* Responsive game title */
+    --game-title-size: clamp(1rem, calc(var(--height-scale) * 0.1), 2rem);
+
+    /* Responsive game spacing */
+    --title-margin-bottom: calc(var(--height-scale) * 0.25);
+    --game-spacing-sm: clamp(0.25rem, 1vw, 0.75rem);
+    --game-spacing-md: clamp(0.5rem, 2vw, 1.5rem);
+    --game-spacing-lg: clamp(0.75rem, 3vw, 2.5rem);
+}
+
+#craps-game {
+    background-image: url("../images/casinoBckgndImage.jpg");
+    color: white;
+    background-position: center top;
+    padding: 1px;
+}
+
+.craps-game-title {
+    font-size: var(--game-title-size);
+    text-align: center;
+
+    margin-top: calc(
+        (
+            100vh
+            - var(--game-title-size)
+            - var(--title-margin-bottom)
+            - var(--height-scale)
+        ) / 2
+    );
+
+    margin-bottom: var(--title-margin-bottom);
+}
+
+.craps-game-container {
+    width: var(--width-scale);
+    height: var(--height-scale);
+
+    border: solid white 2px;
+    margin: 0 auto;
+
+    background-image: url(../images/casino-table.png);
+    background-size: cover;
+    background-position: center top;
+}
+
+.craps-registration-pane {
+    margin-top: var(--game-spacing-sm);
+    text-align: center;
+    font-size: var(--font-normal);
+}
+
+.craps-registration-pane p {
+    padding-left: var(--game-spacing-md);
+}
+
+.craps-registration-pane button {
+    background-color: transparent;
+    color: white;
+    margin: 0 var(--game-spacing-sm);
+    border: solid transparent 1px;
+    font-size: var(--font-normal);
+}
+
+.craps-registration-pane button:hover {
+    background-color: #006600;
+    color: white;
+    border-radius: var(--border-radius);
+    border: solid 1px #003300;
+    font-weight: bold;
+}
+
+.craps-registration-input {
+    background: none;
+    border: none;
+    border-bottom: solid white 1px;
+    color: white;
+    text-align: center;
+    outline: none;
+
+    margin-left: var(--game-spacing-md);
+    width: clamp(5rem, 15vw, 6.25rem);
+    font-size: var(--font-normal);
+}
+
+#craps-main-section {
+    display: none;
+    height: 100%;
+    position: relative;
+}
+
+.craps-main-section-stats {
+    text-align: center;
+    font-size: var(--font-normal);
+}
+
+#craps-stat-money-container {
+    font-size: var(--font-medium);
+}
+
+.craps-onBoard-container {
+    margin-top: calc(var(--height-scale) * 0.3);
+    text-align: center;
+    font-size: var(--font-small);
+}
+
+.craps-role-dice-container {
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.craps-role-dice-container:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+#craps-role-dice-animation-container {
+    margin-top: calc(var(--height-scale) * -0.2);
+    margin-left: calc(var(--height-scale) * -0.2);
+
+    transform: scale(var(--dice-animation-scale, 1));
+}
+
+.craps-round-manager {
+    position: absolute;
+    bottom: var(--game-spacing-sm);
+    width: 100%;
+    text-align: center;
+    font-size: var(--font-normal);
+
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.craps-betting-grid,
+.craps-round-finish-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+
+    margin: 0 auto;
+    width: 80%;
+
+    border-radius: var(--border-radius);
+    border: solid #cf8f5f 1px;
+}
+
+.craps-betting-button,
+.craps-roundFinish-button,
+.craps-betting-amount-container,
+.craps-RoundFinish-message-container {
+    min-width: 0;
+    text-align: center;
+    font-size: var(--font-normal);
+}
+
+.craps-betting-button,
+.craps-roundFinish-button {
+    all: unset;
+    padding: calc(var(--height-scale) * 0.03);
+}
+
+.craps-betting-button:hover,
+.craps-roundFinish-button:hover {
+    cursor: pointer;
+}
+
+.craps-betting-amount-container,
+.craps-RoundFinish-message-container {
+    padding: calc(var(--height-scale) * 0.03);
+
+    border-left: solid #cf8f5f 2px;
+    border-right: solid #cf8f5f 2px;
+}
+
+#craps-user-bet-amount {
+    margin: 0 calc(var(--height-scale) * 0.03);
+}
+
+.craps-betting-amount-indicator:hover {
+    cursor: pointer;
+}
+
+#craps-next-round--disable-botton {
+    color: grey;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#craps-next-round--disable-botton:hover {
+    cursor: not-allowed;
+}
